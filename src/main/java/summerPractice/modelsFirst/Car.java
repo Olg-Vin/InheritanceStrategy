@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "car")
-public class Car extends Vehicle{
+public class Car extends Vehicle {
     protected Integer seats;
     protected Car() { // for hibernate
     }
