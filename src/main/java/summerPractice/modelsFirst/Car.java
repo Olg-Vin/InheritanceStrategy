@@ -8,11 +8,11 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "car")
 public class Car extends Vehicle {
+    private final static String type = "CAR";
     protected Integer seats;
     protected Car() { // for hibernate
     }
-
-    public Car(String type, String model, BigDecimal price, String fuelType, Integer seats) {
+    public Car(String model, BigDecimal price, String fuelType, Integer seats) {
         super(type, model, price, fuelType);
         this.seats = seats;
     }

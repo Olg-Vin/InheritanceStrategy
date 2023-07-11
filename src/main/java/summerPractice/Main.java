@@ -13,16 +13,14 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-
         try (EntityManagerFactory emf = Persistence.createEntityManagerFactory("vehicle");
              EntityManager em = emf.createEntityManager()) {
-//      add new objects for all classes
-            BigDecimal price = new BigDecimal(2);
-            Car car = new Car("type1", "model",  price, "fuelType", 2);
-            Car car1 = new Car("type2", "model",  price, "fuelType", 2);
-            Bike bike = new Bike("type", "model",  price, "fuelType");
-            Plane plane = new Plane("type", "model",  price, "fuelType", 5);
-            Truck truck = new Truck("type", "model",  price, "fuelType", 10.0);
+// add new objects for all classes
+            Car car = new Car("BMW 7",  BigDecimal.valueOf(7600000.0), "бензин", 4);
+            Car car1 = new Car( "BMW 8",  BigDecimal.valueOf(8500000.0), "бензин", 5);
+            Bike bike = new Bike("Stels",  BigDecimal.valueOf(15800.0), "механизм");
+            Plane plane = new Plane("A320",  BigDecimal.valueOf(158000000.0), "авиационное", 105);
+            Truck truck = new Truck("45H",  BigDecimal.valueOf(670000.0), "бензин", 2.5);
 // insert query
             try {
                 em.getTransaction().begin();
@@ -52,7 +50,7 @@ public class Main {
 // join query
 
 // all select query
-            try {
+            /*try {
                 em.getTransaction().begin();
                 List<Car> carList =
                         em.createQuery("FROM Car ", Car.class).getResultList();
@@ -64,7 +62,7 @@ public class Main {
                 if (em.getTransaction() != null)
                     em.getTransaction().rollback();
                 throw e;
-            }
+            }*/
         }
     }
 }

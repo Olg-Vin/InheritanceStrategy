@@ -8,12 +8,11 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "truck")
 public class Truck extends Vehicle{
+    private final static String type = "TRUCK";
     protected Double loadCapacity;
-
     public Truck() {
     }
-
-    public Truck(String type, String model, BigDecimal price, String fuelType, Double loadCapacity) {
+    public Truck(String model, BigDecimal price, String fuelType, Double loadCapacity) {
         super(type, model, price, fuelType);
         this.loadCapacity = loadCapacity;
     }

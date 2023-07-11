@@ -5,21 +5,18 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 @Entity
 @Table(name = "vehicle")
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Vehicle {
     @Id
-    // todo which strategy to choose for id
     @GeneratedValue(strategy = GenerationType.TABLE)
     protected Long id;
     protected String type;
     protected String model;
     protected BigDecimal price;
     protected String fuelType;
-    protected Vehicle() { // none constructor for hibernate
+    protected Vehicle() { // none constructor
     }
-
     public Vehicle(String type, String model, BigDecimal price, String fuelType) {
-//        this.id = id;
         this.type = type;
         this.model = model;
         this.price = price;
