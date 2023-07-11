@@ -30,6 +30,11 @@ public class Truck extends Vehicle{
     public String toString() {
         return "Truck{" +
                 "loadCapacity=" + loadCapacity +
+                ", id=" + id +
+                ", type='" + type + '\'' +
+                ", model='" + model + '\'' +
+                ", price=" + price +
+                ", fuelType='" + fuelType + '\'' +
                 '}';
     }
 }

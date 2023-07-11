@@ -5,8 +5,7 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 @Entity
 @Table(name = "vehicle")
-// strategy "one table - one class"
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Vehicle {
     @Id
     // todo which strategy to choose for id
